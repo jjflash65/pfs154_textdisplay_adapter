@@ -1,0 +1,266 @@
+stxlcd
+   |
+   +-- /avr_pwm                      // Demo zum Ansteuern des Adapters PWM Version
+   |     |
+   |     +-- Makefile                // Makefile zum Uebersetzen des Demoprogramms
+   |     |
+   |     +-- makefile.mk             // wird von Makefile eingebunden
+   |     |
+   |     +-- avr_gpio.h              // Deklarationen zum Ansteuern der Portpins
+   |     |
+   |     +-- stxlcd.c                // Sourcecode zum Ansteuern des Displayadapters
+   |     |
+   |     +-- stxlcd.h                // Header zu stxlcd.c
+   |     |
+   |     +-- stxlcd_demo.c           // Demoprogramm
+   |     |
+   |     +-- stxlcd_demo.hex         // flashbare Binaerdatei im Hex-Format
+   |
+   |
+   +-- /avr_uart                     // Demo zum Ansteuern des Adapters PWM Version
+   |     |
+   |     +-- Makefile                // Makefile zum Uebersetzen des Demoprogramms
+   |     |
+   |     +-- makefile.mk             // wird von Makefile eingebunden
+   |     |
+   |     +-- avr_gpio.h              // Deklarationen zum Ansteuern der Portpins
+   |     |
+   |     +-- softuart.c              // Sourcecode fuer softwarerealisiertes UART-Interface
+   |     |
+   |     +-- softuart.h              // Header zu softuart.h
+   |     |
+   |     +-- stxlcd_uart.c           // Sourcecode zum Ansteuern des Displayadapters
+   |     |
+   |     +-- stxlcd_uart.h           // Header zu stxlcd_uart.c
+   |     |
+   |     +-- stxlcd_demo_uart.c      // Demoprogramm
+   |     |
+   |     +-- stxlcd_demo_uart.hex    // flashbare Binaerdatei im Hex-Format
+   |
+   |
+   +-- /doku
+   |     |
+   |     +-- txtlcd_adapter_v2.pdf   // PDF-Dokumentation
+   |
+   |
+   +-- /pfs154
+   |     |
+   |     +-- /stxlcd_recv                     // Firmware PWM-Version
+   |     |          |
+   |     |          +-- /include
+   |     |          |      |
+   |     |          |      +-- /easy-pdk      // Verzeichnis, enthaelt Konfiguration fuer PFS und Programmer
+   |     |          |      |
+   |     |          |      +-- /pdk           // Verzeichnis, enthaelt Deklarationen (u.a. Adressen der Peripherie lt. Datenblatt)
+   |     |          |      |
+   |     |          |      +-- delay.h        // Header fuer Programmverzoegerungen
+   |     |          |      |
+   |     |          |      +-- pdk_init.h     // Header zur Initialisierung des Systems
+   |     |          |      |
+   |     |          |      +-- pfs1xx_gpio.h  // Header zum Ansprechen der Portpins des PFS154
+   |     |          |
+   |     |          +-- /src
+   |     |          |    |
+   |     |          |    +-- delay.c          // Sourcecode fuer Programmverzoegerungen
+   |     |          |
+   |     |          +-- /tools
+   |     |          |     |
+   |     |          |     +-- easypdkprog     // Flashsoftware fuer EasyPdkProgrammer (Linux 64)
+   |     |          |     |
+   |     |          |     +-- pfsprog         // Flashsoftware fuer Arduino basierenden Programm (Linux 64)
+   |     |          |     |
+   |     |          |     +-- pfsreadhex      // liest aus einer *.ihx Datei den Speicherbedarf
+   |     |          |
+   |     |          +-- Makefile              // Makefile zum Uebersetzen der Firmware PWM-Version
+   |     |          |
+   |     |          +-- makefile.mk           // wird von Makefile eingebunden
+   |     |          |
+   |     |          +-- stxlcd_recv.c         // Firmware PWM-Version
+   |     |          |
+   |     |          +-- stxlcd_recv.ihx       // flashbare Binaerdatei im Hex-Format
+   |     |          |
+   |     |          +.. userchars.txt         // Entwurf der Benutzerbitmaps als Ascii-Text-Datei
+   |     |
+   |     |
+   |     +-- /stxlcd_recv_uart                // Firmware UART-Version
+   |     |          |
+   |     |          +-- /include
+   |     |          |      |
+   |     |          |      +-- /easy-pdk      // Verzeichnis, enthaelt Konfiguration fuer PFS und Programmer
+   |     |          |      |
+   |     |          |      +-- /pdk           // Verzeichnis, enthaelt Deklarationen (u.a. Adressen der Peripherie lt. Datenblatt)
+   |     |          |      |
+   |     |          |      +-- delay.h        // Header fuer Programmverzoegerungen
+   |     |          |      |
+   |     |          |      +-- pdk_init.h     // Header zur Initialisierung des Systems
+   |     |          |      |
+   |     |          |      +-- pfs1xx_gpio.h  // Header zum Ansprechen der Portpins des PFS154
+   |     |          |      |
+   |     |          |      +-- uart_2.h       // Header fuer softwarebasierendes UART-Interface
+   |     |          |
+   |     |          +-- /src
+   |     |          |    |
+   |     |          |    +-- delay.c          // Sourcecode fuer Programmverzoegerungen
+   |     |          |    |
+   |     |          |    +-- uart_2.c         // Sourcecode fuer softwarebasierendes UART-Interface
+   |     |          |
+   |     |          +-- /tools
+   |     |          |     |
+   |     |          |     +-- easypdkprog     // Flashsoftware fuer EasyPdkProgrammer (Linux 64)
+   |     |          |     |
+   |     |          |     +-- pfsprog         // Flashsoftware fuer Arduino basierenden Programm (Linux 64)
+   |     |          |     |
+   |     |          |     +-- pfsreadhex      // liest aus einer *.ihx Datei den Speicherbedarf
+   |     |          |
+   |     |          +-- Makefile              // Makefile zum Uebersetzen der Firmware PWM-Version
+   |     |          |
+   |     |          +-- makefile.mk           // wird von Makefile eingebunden
+   |     |          |
+   |     |          +-- stxlcd_recv_uart.c    // Firmware PWM-Version
+   |     |          |
+   |     |          +-- stxlcd_recv_uart.ihx  // flashbare Binaerdatei im Hex-Format
+   |     |          |
+   |     |          +.. userchars.txt         // Entwurf der Benutzerbitmaps als Ascii-Text-Datei
+   |     |
+   |     +-- /stxlcd_transmit                 // Demo zum Ansteuern des Adapters PWM Version
+   |                |
+   |                +-- /include
+   |                |      |
+   |                |      +-- /easy-pdk      // Verzeichnis, enthaelt Konfiguration fuer PFS und Programmer
+   |                |      |
+   |                |      +-- /pdk           // Verzeichnis, enthaelt Deklarationen (u.a. Adressen der Peripherie lt. Datenblatt)
+   |                |      |
+   |                |      +-- delay.h        // Header fuer Programmverzoegerungen
+   |                |      |
+   |                |      +-- pdk_init.h     // Header zur Initialisierung des Systems
+   |                |      |
+   |                |      +-- pfs1xx_gpio.h  // Header zum Ansprechen der Portpins des PFS154
+   |                |      |
+   |                |      +-- stxlcd.h       // Header fuer die Ansteuersoftware
+   |                |
+   |                +-- /src
+   |                |    |
+   |                |    +-- delay.c          // Sourcecode fuer Programmverzoegerungen
+   |                |    |
+   |                |    +-- stxlcd.c         // Sourcecode zum Steuern des Displayadapters
+   |                |
+   |                +-- /tools
+   |                |     |
+   |                |     +-- easypdkprog     // Flashsoftware fuer EasyPdkProgrammer (Linux 64)
+   |                |     |
+   |                |     +-- pfsprog         // Flashsoftware fuer Arduino basierenden Programm (Linux 64)
+   |                |     |
+   |                |     +-- pfsreadhex      // liest aus einer *.ihx Datei den Speicherbedarf
+   |                |
+   |                +-- Makefile              // Makefile zum Uebersetzen der Firmware PWM-Version
+   |                |
+   |                +-- makefile.mk           // wird von Makefile eingebunden
+   |                |
+   |                +-- stxlcd_demo.c         // Demoprogramm
+   |                |
+   |                +-- stxlcd_demo.ihx       // flashbare Binaerdatei im Hex-Format
+   |
+   |
+   + /stm8_pwm
+   |     |
+   |     +-- /include
+   |     |      |
+   |     |      +-- stm8_gpio.h               // Header zum Ansprechen der Portpins des STM8
+   |     |      |
+   |     |      +-- stm8_init.h               // Header zur Systeminitialisierung
+   |     |      |
+   |     |      |-- stm8s.h                   // Deklarationen zur Peripherie des STM8 (unvollstaendig)
+   |     |      |
+   |     |      +-- stxlcd.h                  // Header fuer Ansteuersoftware stxlcd.c
+   |     |
+   |     +-- /src
+   |     |    |
+   |     |    +-- stm8_init.c
+   |     |    |
+   |     |    +-- stxlcd.c                    // Sourcecode zum Ansteuern des Displayadapters
+   |     |
+   |     +-- /tools
+   |     |     |
+   |     |     +-- stm8flash                  // Programersoftware zum Flashen von STM8 (Linux64)
+   |     |     |
+   |     |     +-- st8readihx                 // liest aus einer *.ihx Datei den Speicherbedarf
+   |     |
+   |     +-- Makefile                         // Makefile zum Uebersetzen des Demoprogramms
+   |     |
+   |     +-- makefile.mk                      // wird vom Makefile eingebunden
+   |     |
+   |     +-- stxlcd_demo.c                    // Demoprogramm
+   |     |
+   |     +-- stxlcd_demo.ihx                  // flashbare Binaerdatei im Hex-Format
+   |
+   |
+   +-- /stm8_uart
+   |       |
+   |       +-- /include
+   |       |      |
+   |       |      +-- stm8_gpio.h               // Header zum Ansprechen der Portpins des STM8
+   |       |      |
+   |       |      +-- stm8_init.h               // Header zur Systeminitialisierung
+   |       |      |
+   |       |      |-- stm8s.h                   // Deklarationen zur Peripherie des STM8 (unvollstaendig)
+   |       |      |
+   |       |      +-- stxlcd_uart.h             // Header fuer Ansteuersoftware stxlcd_uart.c
+   |       |      |
+   |       |      +-- uart.h                    // Header fuer UART-Interface
+   |       |
+   |       +-- /src
+   |       |    |
+   |       |    +-- stm8_init.c
+   |       |    |
+   |       |    +-- stxlcd_uart.c               // Sourcecode zum Ansteuern des Displayadapters
+   |       |    |
+   |       |    +-- uart.c                      // Sourcecode fuer UART-Interface
+   |       |
+   |       +-- /tools
+   |       |     |
+   |       |     +-- stm8flash                  // Programersoftware zum Flashen von STM8 (Linux64)
+   |       |     |
+   |       |     +-- st8readihx                 // liest aus einer *.ihx Datei den Speicherbedarf
+   |       |
+   |       +-- Makefile                         // Makefile zum Uebersetzen des Demoprogramms
+   |       |
+   |       +-- makefile.mk                      // wird vom Makefile eingebunden
+   |       |
+   |       +-- stxlcd_demo_uart.c               // Demoprogramm
+   |       |
+   |       +-- stxlcd_demo_uart.ihx             // flashbare Binaerdatei im Hex-Format
+   |
+   |
+   +-- /stm32f0
+          |
+          +-- /include
+          |      |
+          |      +-- stxlcd_uart.h              // Header fuer Ansteuersoftware stxlcd_uart.c
+          |      |
+          |      +-- sysf0xx_init.h             // Header zum Initialisieren eines STM32F0 Systems
+          |      |
+          |      +-- uart.h                     // Header fuer UART-Interface
+          |
+          +-- /lib                              // Verzeichnis: libopencm3 Library
+          |
+          +-- /src
+          |    |
+          |    +-- stxlcd_uart.c                 // Sourcecode zum Ansteuern des Displayadapters
+          |    |
+          |    +-- sysf0xx_init.c                // Sourcecode zur Initialisierung von STM32F0 Systemen
+          |    |
+          |    +.. uart.c                        // Sourcecode fuer UART-Interface
+          |
+          |
+          +-- /tools
+          |     |
+          |     +-- stlink                       // Verzeichnis, |uellcode fuer ST-Linkprogrammer (open source)
+          |     |
+          |     +-- dfu-util                     // DFU-Programmer Software (Linux 64)
+          |     |
+          |     +.. stm32flash                   // Programmer fuer seriellen Bootloader (Linux 64)
+          |
+          +-- Makefile                           // Makefile zum Uebersetzen des |uellprogramms benoetigt
+          |                                      // makefile.mk im Verzeichnis ./lib
+          |
+          +-- stxlcd_demo_uart.c                 // Demoprogramm
