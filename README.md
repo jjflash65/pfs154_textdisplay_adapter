@@ -1,4 +1,4 @@
-![PFS154-Textdisplayadapter](https://github.com/jjflash65/pfs154_textdisplay_adapter/blob/master/doku/pfs_textlcd_adapter_v2.gif)
+PFS154-Textdisplayadapter
 <br><br>
 Aus 2 Anlaessen heraus entstand ein "intelligenter" Adapter für HD44780 
 kompatible Textdisplay (wobei sich über "intelligent" trefflich streiten 
@@ -34,8 +34,6 @@ PFS154 nur in PWM-Version)
 <br>
 Proprietaeres Protokoll
 <br>
-![PFS154-Textdisplayadapter](https://github.com/jjflash65/pfs154_textdisplay_adapter/blob/master/doku/impulsdiagram_12_bit.gif)
-<br>
 Der Displayadapter hat nur eine Eingangsdatenleitung auf der die 
 Information über ein proprietaeres 12-Bit PWM Protokoll uebertragen wird. 
 Der steuernde Microcontroller benoetigt also nur - wie bereits erwaehnt - 
@@ -65,7 +63,6 @@ reiner C-Software) kann man hier sehen:
 Um die Darstellung auf dem Display etwas schoener zu gestalten sind in
 der Adaptersoftware Benutzerzeichen vordefiniert, die einfach per
 Kommando abrufbar sind.
-![PFS154-Textdisplayadapter](https://github.com/jjflash65/pfs154_textdisplay_adapter/blob/master/doku/benutzerzeichen_doku.gif)
 <br>
 Grundsaetzlich: eine etwas ausfuehrlichere Beschreibung gibt es im 
 PDF-File im Ordner "doku"
